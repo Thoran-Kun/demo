@@ -20,14 +20,11 @@ public class Ordine {
     private double costoCoperto;
     private StatoOrdine statoOrdine;
 
-    public Ordine(int numeroOrdine, int numeroCoperti, LocalDateTime oraAcquisizione, List<Menu> elementiOrdine, Tavolo tavolo, double costoCoperto, StatoOrdine statoOrdine) {
+    public Ordine(int numeroOrdine, int numeroCoperti, Tavolo tavolo, double costoCoperto, StatoOrdine statoOrdine) {
         this.numeroOrdine = numeroOrdine;
         this.numeroCoperti = numeroCoperti;
-        this.oraAcquisizione = LocalDateTime.now();
-        this.elementiOrdine = elementiOrdine;
         this.tavolo = tavolo;
         this.costoCoperto = costoCoperto;
-        this.statoOrdine = statoOrdine;
     }
 
     public double costoTotale() {
