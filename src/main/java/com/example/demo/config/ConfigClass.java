@@ -6,6 +6,7 @@ import com.example.demo.entities.PizzeriaMenu;
 import com.example.demo.entities.Topping;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 import java.util.List;
 
@@ -61,6 +62,7 @@ public class ConfigClass {
 
     //---------------- PIZZE -------------
     @Bean
+    @Scope("prototype")
     public Pizza Margherita() {
         Pizza p = new Pizza("Margherita", 4.99, 1104);
         p.addTopping(Cheese());
@@ -69,6 +71,7 @@ public class ConfigClass {
     }
 
     @Bean
+    @Scope("prototype")
     public Pizza Hawaiian() {
         Pizza p = new Pizza("Hawaiian", 6.49, 1024);
         p.addTopping(Tomatoe());
@@ -79,6 +82,7 @@ public class ConfigClass {
     }
 
     @Bean
+    @Scope("prototype")
     public Pizza SalamiPizza() {
         Pizza p = new Pizza("Salami", 5.99, 1160);
         p.addTopping(Tomatoe());
